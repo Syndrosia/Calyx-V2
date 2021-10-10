@@ -1490,3 +1490,5 @@ function Library:CreateWindow(title, color)
 end
 
 return Library
+
+print("Loaded")
