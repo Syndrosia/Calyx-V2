@@ -324,6 +324,14 @@ local autoshoot = RageGun:CreateToggle("Auto shoot",function(state)
     end
 end)
 
+local autoRage = RageGun:CreateButton("Auto rage (Rage)", funciton(state)
+	if state then
+		spawn(function()
+		
+		end)
+	end
+end)
+	
 local spawnkill = RageGun:CreateToggle("Spawn kill (Recommended)",function(state)
     if state then
         spawn(function()
