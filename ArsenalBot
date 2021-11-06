@@ -1,4 +1,4 @@
-wait(5)
+wait(9)
 
 local validids = {}
 
