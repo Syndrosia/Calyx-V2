@@ -1,0 +1,9 @@
+local validids = {}
+
+for i, v in next, game:GetService("HttpService"):JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/286090429/servers/Public?limit=100")).data do
+    if v.playing < v.maxPlayers - 1 and v.id ~= game.JobId then
+		validids[#validids + 1] = v.id
+    end
+end
+
+game:GetService("TeleportService"):TeleportToPlaceInstance(286090429, validids[math.random(1, #validids)])
