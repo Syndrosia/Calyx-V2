@@ -1,5 +1,3 @@
-wait(5)
-
 local validids = {}
 
 for i, v in next, game:GetService("HttpService"):JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/286090429/servers/Public?limit=100")).data do
