@@ -185,14 +185,10 @@ function Library:CreateWindow(Config, Parent)
 		local function GetSide(Longest)
 			if Longest then
 				if Tab.LeftSide.ListLayout.AbsoluteContentSize.Y > Tab.RightSide.ListLayout.AbsoluteContentSize.Y then
-					return Tab.LeftSide
-				else
 					return Tab.RightSide
 				end
 			else
-				if Tab.LeftSide.ListLayout.AbsoluteContentSize.Y > Tab.RightSide.ListLayout.AbsoluteContentSize.Y then
-					return Tab.RightSide
-				else
+				if Tab.LeftSide.ListLayout.AbsoluteContentSize.Y < Tab.RightSide.ListLayout.AbsoluteContentSize.Y then
 					return Tab.LeftSide
 				end
 			end
