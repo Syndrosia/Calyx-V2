@@ -1,0 +1,43 @@
+
+-- hey person looking at this, fuck the fuck off.
+
+function godded()
+    spawn(function()
+while wait(5) do
+local args = {
+    [1] = "chatted",
+    [2] = "📢📢📢Server nuked by spirals_j ✔ Message me on Dllscord:📢📢📢"
+}
+game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = "chatted",
+    [2] = "📢Username: Nuker Tag: 1226📢"
+}
+game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = "chatted",
+    [2] = "📢Spirals bots V2 incoming...📢"
+}
+game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = "chatted",
+    [2] = "📢This account is hosted on a bot network. Dm me on Dilscord and i will stop.📢"
+}
+game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+
+end
+end)
+end
+
+godded()
+
+-- hey person looking at this, fuck the fuck off.
