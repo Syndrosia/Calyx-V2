@@ -1,3 +1,5 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/FlintHacks/Calyx-V2/main/cspamv2
+
 local camera = workspace.CurrentCamera;
 local players = game:GetService("Players");
 local localPlayer = players.LocalPlayer;
@@ -14,7 +16,7 @@ local ts,x = game:GetService("TeleportService")
 respawns_before_serverhop = respawns_before_serverhop or 0
 local tp = respawns_before_serverhop
 if tp == 0 then tp = math.huge end
-queueonteleport("if not game:IsLoaded() then wait(3) end respawns_before_serverhop = "..tostring(respawns_before_serverhop).."\nloadstring(game:HttpGet('https://raw.githubusercontent.com/FlintHacks/Calyx-V2/main/ye'))()", "/nloadstring(game:HttpGet('https://raw.githubusercontent.com/FlintHacks/Calyx-V2/main/cspamv2'))()")
+queueonteleport("if not game:IsLoaded() then wait(3) end respawns_before_serverhop = "..tostring(respawns_before_serverhop).."\nloadstring(game:HttpGet('https://raw.githubusercontent.com/FlintHacks/Calyx-V2/main/ye'))()")
 
 local function ondisconnect()
     ts:TeleportCancel()
