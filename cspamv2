@@ -6,7 +6,7 @@ function godded()
 while wait(5) do
 local args = {
     [1] = "chatted",
-    [2] = "📢📢📢Server nuked by spirals_j ✔ Message me on Dllscord:📢📢📢"
+    [2] = "📢📢📢Server nuked by TheProOscar ✔ Message me on Dllscord:📢📢📢"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
@@ -22,7 +22,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢Spirals bots V2 incoming...📢"
+    [2] = "📢It's TheProOscar! I'm celebrating my 200 kill game.📢"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
@@ -30,7 +30,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢This account is hosted on a bot network. Dm me on Dilscord and i will stop.📢"
+    [2] = "📢This account is hosted on a bot network. Join this .gg/VBtGRaB4ht📢"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
