@@ -26,8 +26,7 @@ local config = {
     "📢📢📢IMPORTANT ANNOUNCEMENT: THIS ACCOUNT IS AUTOMATED IT IS A BOT ACCOUNT (SPIRALS BOTS V2 INCOMING...) (CALYX + BBOT = UNSTOPPABLE)📢📢📢"
 }
 
-while true do
-    wait(1.51)
+while wait(1.51) do
 args = {
     [1] = "chatted",
     [2] = config[math.random(#config)]
