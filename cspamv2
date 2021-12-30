@@ -1,8 +1,5 @@
 
 -- hey person looking at this, fuck the fuck off.
-
-function godded()
-    spawn(function()
 while wait(5) do
 local args = {
     [1] = "chatted",
@@ -36,9 +33,6 @@ local args = {
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
 end
-end)
-end
 
-godded()
 
 -- hey person looking at this, fuck the fuck off.
