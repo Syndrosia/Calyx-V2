@@ -6,7 +6,7 @@ function godded()
 while wait(5) do
 local args = {
     [1] = "chatted",
-    [2] = "📢📢📢Server nuked by Oscar ✔ Message me on Dllscord:📢📢📢"
+    [2] = "هذا السيناريو من صنع نوكر أنا أعيش في سوريا وأحتاج المال لمشبك أداة الهاكرز المحترفين ولماذا تترجم هذا"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
@@ -14,7 +14,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢Username: Nuker Tag: 1226📢"
+    [2] = "هذه هي الرسالة الثانية غير المرغوب فيها في الدردشة والتي تعتبر مؤيدة جدًا وليست احترافية مثل الإصدار الثاني لأمك وهو أفضل استغلال"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
@@ -22,7 +22,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢It's Oscar! This is how i celebrate my 200 kill game.📢"
+    [2] = "إن محاولة إزالة الغموض عن هذه الرسالة وتحويلها إلى اللغة الإنجليزية خطأ فادح لأنك الآن لا تملك أي أموال. على الرحب والسعة لول"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
@@ -30,7 +30,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢This account is hosted on a bot network. >> .gg/VBtGRaB4ht📢"
+    [2] = "حصن نيت حصن نيت حصن نيت. هي لعبتي المفضلة حيث قد تكون قادرًا على إخبار أنني أحب فورت نايت ، إنه من الجنون يا رفاق أن هذا السيناريو تم إنشاؤه بواسطة اللوالب"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
