@@ -1,10 +1,8 @@
-
 -- hey person looking at this, fuck the fuck off.
 while wait(5) do
 local args = {
     [1] = "chatted",
-    [2] = "رفاق هذه الرسالة طمس مرشح الدردشة بهذه اللغة لذلك هذا مشهد نادر
-يتيح لك التعتيم على هذه الكلمة تجاوز بطريقة ما ، لذلك سأفكر في أي شيء مجنون"
+    [2] = "رفاق هذه الرسالة طمس مرشح الدردشة بهذه اللغة لذلك هذا مشهد نادر يتيح لك التعتيم على هذه الكلمة تجاوز بطريقة ما ، لذلك سأفكر في أي شيء مجنو"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
