@@ -30,7 +30,7 @@ wait(0.1)
 
 local args = {
     [1] = "chatted",
-    [2] = "📢This account is hosted on a bot network. Join this .gg/VBtGRaB4ht📢"
+    [2] = "📢This account is hosted on a bot network. >> .gg/VBtGRaB4ht📢"
 }
 game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
 
