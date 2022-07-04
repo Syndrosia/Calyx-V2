@@ -1,0 +1,1322 @@
+-- 4th july
+local gamename = game.PlaceId
+if gamename == 292439477 then --pf
+
+LclplrName = game:GetService("Players").LocalPlayer.Name
+Calyxversion = "Calyx V2"
+        for i,v in pairs(getgc(true)) do
+            if type(v) == "table" then
+                if rawget(v, "send") then
+                Network = v
+                end
+                if rawget(v, "isdeployed") then
+                Menu = v;
+            end
+            end
+        end
+local vkFrame = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Votekick
+
+local Config = {
+    WindowName = Calyxversion.." - Phantom Forces                                                                                    Syndrosia#6360",
+	Color = Color3.fromRGB(105,0,255),
+	Keybind = Enum.KeyCode.RightShift
+}
+
+_G.Settings = {
+    AimbotToggle = false,
+    VisibleCheck = false,
+    AimbotFOV = "360",
+    ShowFov = false,
+    smoothing = "0",
+    AimbotHitChance = "100",
+    smoothingToggle = false,
+    HitboxToggle = false,
+    HitboxDrop = "Head",
+    HitboxSize = "10",
+    HitPriority = false,
+    AdjustForBulletDrop = false,
+    LockReload = false,
+    Deadzone = "121",
+    TrigToggle = false,
+    InstantTrig = false,
+    TrigReaction = "0",
+    AutoMan = false,
+    burstTrig = false,
+    SilentAim = false,
+    silentAimFOV = "130",
+    SpinSpeed = "100",
+    TiltHead = false,
+    ForceStanceToggle = false,
+    ForceStance = "Prone",
+    AxisSpoof = false,
+    Look = false,
+    LookDirection = "Up",
+    autoshoot = false,
+    spawnkill = false,
+    killDelay = "0",
+    prioritizecollats = false,
+    Mincollats = "2",
+    Maxcollats = "5",
+    LagSwitch = false,
+    knifeaura = false,
+    KnifeRadius = "25",
+    SemiKillAll = false,
+    GreadeEnabled = false,
+    GrenadeBudget = "3",
+    GTP = false,
+    QuickThrow = false,
+    Fly = false,
+    Flyspeed = "50",
+    WalkspeedToggle = false,
+    Walkspeed = "16",
+    JPToggle = false,
+    JumpPower = "4",
+    gravity = false,
+    Infinitejump = false,
+    GravitySlider = "1",
+    NoFallDmg = false,
+    BHOP = false,
+    NoClip = false,
+    Slidecool = false,
+    jumpcool = false,
+    NoRespawning = false,
+    AutoVK = false,
+    ChatSpam = false,
+    autovkoption = "Yes",
+    AutoVote = false
+}
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/mHuJep0E"))()
+local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
+
+local LegitTab = Window:CreateTab("Legit")
+local CharTab = Window:CreateTab("Character")
+local RageTab = Window:CreateTab("Rage/Misc")
+local VisualsTab = Window:CreateTab("Visuals")
+local SettingsTab = Window:CreateTab("Settings")
+
+local Gun = LegitTab:CreateSection("Gun Behaviour")
+local Legit = LegitTab:CreateSection("Aim assist")
+local Trig = LegitTab:CreateSection("Triggerbot")
+local Character = CharTab:CreateSection("Character")
+local AntiAim = CharTab:CreateSection("Anti aim")
+local RageGun = RageTab:CreateSection("Blatant")
+local Misc = RageTab:CreateSection("Misc")
+local Grenade = RageTab:CreateSection("Grenades")
+local UI = SettingsTab:CreateSection("UI Appearance")
+local Aesthetics = VisualsTab:CreateSection("Aesthetics")
+local ESP = VisualsTab:CreateSection("ESP")
+local Chams = VisualsTab:CreateSection("Chams")
+local World = VisualsTab:CreateSection("World")
+local Broken = RageTab:CreateSection("Risky features")
+
+-- INITIALIZATION IMPORT HERE
+
+function initialize()
+    spawn(function()
+        local tt = math.random(480,1392)
+        local AR = game:GetService("ReplicatedStorage").Misc.Msger
+        local b = AR:Clone()
+        local a = AR:Clone()
+        local c = AR:Clone()
+        a.Parent = game:GetService("ReplicatedStorage").Misc
+        b.Parent = game:GetService("ReplicatedStorage").Misc
+
+        game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version.Text = "6.0.0 Modified with Calyx V2"
+        game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version.TextSize = 20
+
+        b.Parent = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat
+        b.Text = " $ Calyx V2 $"
+        b.Msg.Text = "  Loading script..."
+        b.Tag.Staff.Visible = true
+        b.TextStrokeTransparency = 1
+        b.Msg.TextStrokeTransparency = 1
+        b.Tag.Staff.Image = "http://www.roblox.com/asset/?id=7197419712"
+
+        a.Parent = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat
+        a.Text = " $ Calyx V2 $"
+        a.Msg.Text = "  Successfully loaded! Took: "..tt.."ms"
+        a.Tag.Staff.Visible = true
+        a.TextStrokeTransparency = 1
+        a.Msg.TextStrokeTransparency = 1
+        a.Tag.Staff.Image = "http://www.roblox.com/asset/?id=7197419712"
+
+        local count = 0 
+        for i,v in pairs (game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat:GetChildren()) do
+            count = count + 1
+        end
+
+        if count > 7 then
+        a.Text = ""
+        b.Text = ""
+        b.Parent = game:GetService("ReplicatedStorage").Misc
+        a.Parent = game:GetService("ReplicatedStorage").Misc
+        end
+
+        local Brick = a
+        local brick = b
+        local Bricks = c
+        local VedDev = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version
+        while true do
+          for i = 0,1,0.001*4 do
+              Bricks.TextColor3 = Color3.fromHSV(i,1,1)
+              Brick.TextColor3 = Color3.fromHSV(i,1,1)
+              brick.TextColor3 = Color3.fromHSV(i,1,1)
+              VedDev.TextColor3 = Color3.fromHSV(i,1,1)
+              wait()
+          end
+        end
+end)
+end
+
+initialize()
+
+-- SCRIPT FUNCTIONS AND UI BUTTONS BELOW
+
+local AimbotToggle = Legit:CreateToggle("Aim assist", nil, function(State)
+	if State then
+        spawn(function()
+            _G.Settings.AimbotToggle = true
+            
+            print(State)
+        end)
+    end
+end)
+AimbotToggle:CreateKeybind("O", function(Key)
+end)
+
+local VisibleCheck = Legit:CreateToggle("Visible check", nil, function(State)
+        if State then
+            spawn(function()
+                _G.Settings.VisibleCheck = true
+                
+                print(State.."Hi")
+            end)
+        end
+    end)
+
+    VisibleCheck:AddToolTip("Checks if the player is in view")
+
+    local AimbotFOV = Legit:CreateSlider("Aim assist fov", 0, 360, 90, true, function(Value)
+    if Value ~= 90 then
+        spawn(function()
+                
+        end)
+      end
+    end)
+
+    AimbotFOV:AddToolTip("Size of the aim assist circle")
+
+    local ShowFov = Legit:CreateToggle("Show FOV", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    ShowFov:AddToolTip("Shows the aim assist circle")
+
+    local smoothingToggle = Legit:CreateToggle("Smoothing", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)    
+
+    smoothingToggle:AddToolTip("Will slow down flicks from different targets")
+
+    local smoothing = Legit:CreateSlider("Smoothness", 0, 10, 4, false, function(Value)
+    if Value ~= 4 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    smoothing:AddToolTip("How smooth the flicks are from enemy to enemy")
+
+    local AimbotHitChance = Legit:CreateSlider("Aimbot hit chance (%)", 0, 100, 70, true, function(Value)
+        if Value ~= 70 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    AimbotHitChance:AddToolTip("The chance that the aim assist will be directly on the player")
+
+    local HitboxToggle = Legit:CreateToggle("Enable hitboxes", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    HitboxToggle:AddToolTip("Toggles enlarged hitboxes")
+
+    local HitboxDrop = Legit:CreateDropdown("Hitbox extender", {"Head", "Left arm", "Right arm", "Torso", "Left leg", "Right leg", "All of the above"}, function(String)
+        if String then
+            spawn(function()
+                
+            end)
+        end
+    end)
+    HitboxDrop:SetOption("Head")
+
+    HitboxDrop:AddToolTip("Which body part will be extended")
+
+    local HitboxSize = Legit:CreateSlider("Hitbox size (Studs)", 0, 10, 8, true, function(Value)
+        if Value ~= 0 then
+            spawn(function()                
+            end)
+        end
+    end)
+
+    HitboxSize:AddToolTip("How big the selected body part will be")
+
+    local HitPriority = Legit:CreateSlider("Headshot chance (%)", 0, 100, 50, true, function(Value)
+    if Value then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    HitPriority:AddToolTip("Chance that the aim assist will land on the head")
+
+    local AdjustForBulletDrop = Legit:CreateToggle("Adjust for bullet drop", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    AdjustForBulletDrop:AddToolTip("Will counteract bullet drop ")
+
+    local LockReload = Legit:CreateToggle("Turn off aim assist when reloading", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    LockReload:AddToolTip("Turns off aim assist when reloading")
+
+    local panic = Legit:CreateButton("PANIC! (Turns off everything)", function()
+        spawn(function()
+            
+        end)
+    end)
+
+    panic:AddToolTip("Turns off everything you have enabled and destroys the gui and other traces of exploiting")
+    -- triggerbot section
+
+    local TrigToggle = Trig:CreateToggle("Enabled", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    TrigToggle:AddToolTip("Toggles triggerbot")
+
+    local InstantTrig = Trig:CreateToggle("Visible check", nil, function(State)
+    if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    InstantTrig:AddToolTip("Checks if the person in conjunction with the tracjetory is in view")
+
+    local TrigReaction = Trig:CreateSlider("Reaction time (ms)", 0, 400, 130, nil, function(Value)
+        if Value ~= 130 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    TrigReaction:AddToolTip("Reaction time to start firing")
+
+    local Advancedtrig = Trig:CreateToggle("Advanced mode (Beta AI)", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+    Advancedtrig:AddToolTip("Holds for automatics and bursts for bursts")
+
+    -- gun behaviour section
+
+    local SilentAim = Gun:CreateToggle("Silent aim", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    SilentAim:AddToolTip("Spoofs spread in favour of you")
+
+    local silentAimFOV = Gun:CreateSlider("Silent aim FOV", 0, 1000, 130, nil, function(Value)
+        if Value ~= 130 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    silentAimFOV:AddToolTip("The size of silent aim")
+
+    local SilentHit = Gun:CreateSlider("Silent aim hit chance", 0, 100, 80, nil, function(Value)
+        if Value ~= 80 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    SilentHit:AddToolTip("The chance of silent aim hitting its shots")
+
+    local RecoilReduction = Gun:CreateToggle("Recoil Reduction", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    RecoilReduction:AddToolTip("Counter-acts recoil and simulates it in real time")
+
+    local RecoilX = Gun:CreateSlider("Recoil reduction (x)", 0, 100, 100, nil, function(Value)
+        if Value ~= 100 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    RecoilX:AddToolTip("Counter-acts horizontal recoil")
+
+    local RecoilY = Gun:CreateSlider("Recoil reduction (Y)", 0, 100, 100, nil, function(Value)
+        if Value ~= 100 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    RecoilY:AddToolTip("Counter-acts vertical recoil")
+
+    local RecoilSpread = Gun:CreateToggle("No spread", nil,function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    RecoilSpread:AddToolTip("Removes gun spread")
+
+    local NoBulletDrop = Gun:CreateToggle("No bullet drop", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    NoBulletDrop:AddToolTip("Disables bullet drop")
+
+    local NoSway = Gun:CreateToggle("No sway or bob", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    NoSway:AddToolTip("Removes sway and bob from your gun")
+
+    local CombineMags = Gun:CreateToggle("Combine mags", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    CombineMags:AddToolTip("Combines the mags")
+    
+    -- charcter tab
+
+    local AntiAimToggle = AntiAim:CreateToggle("Enable", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    AntiAimToggle:AddToolTip("Turns on anti aim")
+
+    local Spinbot = AntiAim:CreateToggle("Spinbot", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Spinbot:AddToolTip("Spins your camera on the network so when people spectate you all they see is you spinning")
+
+    local SpinSpeed = AntiAim:CreateSlider("Spin speed", 0, 100, 40, nil, function(Value)
+        spawn(function()
+            if Value ~= 40 then
+            
+            end
+        end)
+    end)
+
+    SpinSpeed:AddToolTip("How fast your network character spins")
+
+    local LagSwitch = AntiAim:CreateToggle("Lag switch", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    LagSwitch:AddToolTip("Makes your network character really laggy")
+
+    local TiltHead = AntiAim:CreateToggle("Tilt head", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    TiltHead:AddToolTip("Tilts your head")
+
+    local ForceStance = AntiAim:CreateDropdown("Force stance", {"Standing", "Crouching", "Prone" }, function(String)
+        if String then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    ForceStance:AddToolTip("Forces your stance on your network character")
+
+    ForceStance:SetOption("Standing")
+
+    local Yaw = AntiAim:CreateSlider("Yaw", 0, 360, 180, true, function(Value)
+        if Value ~= 360 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Yaw:AddToolTip("Controls the yaw of your network character")
+
+    local Pitch = AntiAim:CreateSlider("Pitch", 0, 180, 90, true, function(Value)
+        if Value ~= 90 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Pitch:AddToolTip("Controls the pitch of your network character")
+
+    local skycam = AntiAim:CreateToggle("Sky spectator cam", nil, function(State)
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    skycam:AddToolTip("When you kill someone, instead of them spectating you they will just be starring at the sky.")
+
+    -- charcter section
+
+    local Fly = Character:CreateToggle("Fly", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Fly:AddToolTip("Lets you fly (keybind will only kick in once fly has been activated to prevent accidental toggles)")
+
+    Fly:CreateKeybind("Q", function(Key)
+    end)
+
+    local Flyspeed = Character:CreateSlider("Fly speed", 0, 250, 165, false, function(Value)
+        if Value ~= 165 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Flyspeed:AddToolTip("How fast you fly")
+
+    local InfStamina = Character:CreateToggle("No Fatigue", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    InfStamina:AddToolTip("Stops your stamina running out (advanced movement)")
+
+    local Walkspeed = Character:CreateSlider("Walkspeed", 0, 100, 16, true, function(Value)
+        if Value ~= 16 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local BHOP = Character:CreateToggle("Bunny Hop", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    BHOP:AddToolTip("Spams jump")
+
+    Walkspeed:AddToolTip("How fast you walk")
+
+    local Jumppower = Character:CreateSlider("Jump power", 0, 32, 4, true, function(Value)
+        if Value ~= 4 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Jumppower:AddToolTip("How high you jump")
+
+    local Gravity = Character:CreateToggle("Modify gravity", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    Gravity:AddToolTip("Changes gravity")
+
+    local GravitySlider = Character:CreateSlider("Gravity", -10, 10, 1, true, function(Value)
+        if Value ~= 1 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    GravitySlider:AddToolTip("Gravity strength ")
+
+    local Infinitejump = Character:CreateToggle("Inf jump", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    Infinitejump:AddToolTip("Lets you infinitely jump")
+
+    local NoFallDmg = Character:CreateToggle("No fall damage", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    NoFallDmg:AddToolTip("No fall damage")
+
+    -- rage section (calyx premium)
+
+    local spawnkill = RageGun:CreateToggle("Insta kill enemy", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    spawnkill:AddToolTip("Instantly kills the enemy in 1 shot") 
+
+    local CalyxRagebot = RageGun:CreateToggle("Ragebot", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    local CalyxRageBotDelay = RageGun:CreateSlider("Ragebot delay (ms)", 12,70,25, false, function(Value)
+        if Value then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    CalyxRagebot:AddToolTip("OP ragebot (credits to iRay)")
+   
+
+    local knifeaura = RageGun:CreateToggle("Knife aura", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local KnifeRadius = RageGun:CreateSlider("Knife aura radius", 0, 25, 25, true, function(Value)
+        if Value ~= 25 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    KnifeRadius:AddToolTip("The size of the radius to knife people")
+
+    local KnifeAuraMustHave = RageGun:CreateToggle("Require knife equipped", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    knifeaura:AddToolTip("Kills everyone in selected stud radius with your knife")
+
+    -- grenades
+
+    local GrenadeEnabled = Grenade:CreateToggle("Grenade Bot", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local XPFarm = Broken:CreateButton("XP FARM", function(State)  
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local unlockAllGuns = Broken:CreateButton("Unlock all guns", function(State)
+        if State then
+            spawn(function()
+                local weapon = {
+                    "AK12",
+                    "M9",
+                    "KNIFE"
+                }
+                local attachments = {}
+                local modules = game:GetService("ReplicatedStorage").GunModules
+                local defaults = {
+                    CARBINE = "M4A1",
+                    LMG = "COLT LMG",
+                    PISTOL = "M9",
+                    PDW = "MP5K",
+                    DMR = "INTERVENTION",
+                    RAILGUN = "INTERVENTION",
+                    ASSAULT = "AK12",
+                    SNIPER = "INTERVENTION",
+                    REVOLVER = "M9",
+                    SHOTGUN = "KSG 12"
+                }
+                
+                for i, v in pairs(getscripts()) do
+                    if v.ClassName == "ModuleScript" and v.Name == "network" then
+                        getgenv()[v.Name] = require(v)
+                        getgenv()["send"] = network.send
+                    end
+                end
+                
+                for i, v in pairs(getgc(false)) do
+                    if debug.getinfo(v).name == "loadgun" then
+                        getgenv()["loadgun"] = v
+                        break
+                    end
+                end
+                
+                for i, v in pairs(getgc(false)) do
+                    if debug.getinfo(v).name == "loadknife" then
+                        getgenv()["loadknife"] = v
+                        break
+                    end
+                end
+                
+                for i, v in pairs(getgc(true)) do
+                    if type(v) == "table" and rawget(v, "unlockkills") then
+                        v.unlockkills = 0
+                    end
+                end
+                
+                for i, v in pairs(modules:GetChildren()) do
+                    local data = require(v)
+                    
+                    if data.type ~= "Grenade" then
+                        data["exclusiveunlock"] = false
+                        data["hideunlessowned"] = false
+                        data["unlockrank"] = 0
+                    end
+                end
+                
+                loadgun = hookfunction(loadgun, function(name, a, b, data, c, skin, number)
+                    return loadgun(weapon[number], a, b, attachments[weapon[number]] or data, c, skin, number)
+                end)
+                
+                loadknife = hookfunction(loadknife, function(name, skin)
+                    return loadknife(weapon[3], skin)
+                end)
+                
+                function network.send(self, func, ...)
+                    if func == "changeatt" then
+                        local category, name, data = ...
+                        attachments[name] = data
+                        return 
+                    elseif func == "changewep" then
+                        local category, name = ...
+                        
+                        if category == "Knife" then
+                            weapon[3] = name
+                            return
+                        end
+                        
+                        weapon[category == "Primary" and 1 or 2] = name
+                        return send(self, func, category, defaults[require(modules[name]).type])
+                    end
+                    
+                    return send(self, func, ...)
+                end
+            end)
+        end
+    end)
+
+    local unlockAllAttachments = Broken:CreateButton("Unlock all attachments", function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+  
+    GrenadeEnabled:AddToolTip("Teleports grenades to lowest rank enemy (so they don't think anything of it lol")
+
+    local GrenadeBudget = Grenade:CreateSlider("Grenade tick time (s)", 0, 5, 5, true, function(Value)
+        if Value ~= 5 then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    GrenadeBudget:AddToolTip("Amount of grenades used to teleport")
+
+    local InstantExplode = Grenade:CreateToggle("Instant explode", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    InstantExplode:AddToolTip("Instantly explode when touching player")
+
+    local QuickThrow = Grenade:CreateToggle("Quick throw", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    QuickThrow:AddToolTip("Quick throws your grenades")
+
+    local DisplayTrajectory = Grenade:CreateToggle("Display grenade trajectory", nil, function(State)
+        if State then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    DisplayTrajectory:AddToolTip("Displays the path of your grenade")
+
+    -- misc
+
+    local AutoVK = Misc:CreateToggle("Call random votekick (Rank 25+)", nil, function(State)
+        if State then
+            spawn(function()
+    
+local players = game:GetService("Players"):GetPlayers()
+
+if #players > 0 then
+        RandomPlayer = players[math.random(1, #players)]
+end
+
+if RandomPlayer.Name ~= LclplrName then
+        AllowedRandom = true
+end
+
+if not Menu:isdeployed() then
+    if AllowedRandom then
+        Network:send("spawn")
+    wait(0.3)
+      local args = 
+        {
+        [1] = "modcmd",
+        [2] = "/votekick:"..RandomPlayer.Name..":Exploiting"
+        }
+        game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+        task.wait(0.7)
+        for i, v in pairs(getnilinstances()) do
+        if v.ClassName == "ModuleScript" and v.Name == "network" then
+        for i = 1, 100 do
+            require(v):send("repupdate", Vector3.new(), Vector2.new(), tick())
+        end
+    end
+end
+    end
+end
+
+if Menu:isdeployed() then
+    local args = 
+        {
+        [1] = "modcmd",
+        [2] = "/votekick:"..RandomPlayer.Name..":Exploiting"
+        }
+    game:GetService("ControllerService").RemoteEvent:FireServer(unpack(args))
+end
+    
+end)
+end
+end)
+
+
+AutoVK:AddToolTip("Votekicks a random player for exploiting (Rank 25+ needed)")
+AutoVK:CreateKeybind("J", function(key)
+end)
+
+    local KillSay = Misc:CreateToggle("Kill say", nil, function(State)
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local KillSayInput = Misc:CreateTextBox("Message to killsay", "{name} just died to Calyx V2", false, function(String)
+        if String then
+            spawn(function()
+                print(String)
+            end)
+        end
+    end)
+
+    local ChatSpam = Misc:CreateToggle("Chat Spam", nil, function(State)
+        if State then
+        _G.Pro = true
+        spawn(function()
+            if _G.Pro then
+                loadstring(game:HttpGet('https://pastebin.com/raw/kXexW668', true))()
+            end
+        end)
+    elseif not State then
+        _G.Pro = false
+    end
+    end)
+
+    ChatSpam:AddToolTip("Spams chat with emojis and toxicity")
+
+     local AutoVote = Misc:CreateToggle("Auto vote", true, function(State)
+        if State then
+            spawn(function()
+    local name = game:GetService("Players").LocalPlayer.Name
+    local vk = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("ChatGame").Votekick
+        vk:GetPropertyChangedSignal("Visible"):Connect(function()
+    if vk.Title.Text == "Votekick "..name.." out of the server?" then
+        keypress(0x4E)   
+            wait(0.03)
+        keyrelease(0x4E)
+    else
+    if getgenv().vkoptionselected == "Yes" then
+        keypress(0x59)
+            wait(0.01)
+        keyrelease(0x59)
+    elseif getgenv().vkoptionselected == "Dismiss" then
+        keypress(0x4A)
+            wait(0.01)
+        keyrelease(0x4A)
+    elseif getgenv().vkoptionselected == "No" then
+        keypress(0x4E)   
+            wait(0.03)
+        keyrelease(0x4E)
+    end
+    end
+    end)
+        end)
+        end
+        end)
+
+        AutoVote:AddToolTip("Automatically votes when votekick is avalible (Votes no for you)")
+
+    local autovkoption = Misc:CreateDropdown("Votekick option", {"No", "Dismiss", "Yes"}, function(String)
+        getgenv().vkoptionselected = String
+    end)
+
+    autovkoption:AddToolTip("Votekick option sent when the votekick is avalible (You are automatically no)")
+
+    autovkoption:SetOption("Yes")
+local name = game:GetService("Players").LocalPlayer.Name
+   
+
+    local autoVoteNForSelf = Misc:CreateToggle("Auto vote no for self", true, function()
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local despawnButton = Misc:CreateButton("Despawn without death", function()
+            spawn(function()
+                for i, v in pairs(getnilinstances()) do
+                    if v.ClassName == "ModuleScript" and v.Name == "network" then
+                        for i = 1, 100 do
+                           require(v):send("repupdate", Vector3.new(), Vector2.new(), tick())
+                        end
+                    end
+                end
+            end)
+    end)
+
+        -- visuals
+
+    local WorldColour = World:CreateToggle("Change world color", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    local WorldColourPicker = World:CreateColorpicker("World Colour", nil, function(Color)
+        if Color then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local deletemap = World:CreateButton("Delete map", function()
+            spawn(function()
+                
+            end)
+    end)
+
+    local ThirdPerson = World:CreateToggle("Third person", nil, function(State)
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local ThirdPersonSlider = World:CreateSlider("Third person distance", 0, 25, 0, false, function(Value)
+        if Value then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local LightningTracers = World:CreateToggle("Lightning tracers", nil, function(State)
+        if State then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local HideUsernameMode = World:CreateToggle("Hide username", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    HideUsernameMode:AddToolTip("Covers your username so you can safely screenshare to people")
+
+    local ESPToggle = ESP:CreateToggle("ESP", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local ESPTracers = ESP:CreateToggle("Tracers", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local TracersStartPos = ESP:CreateDropdown("Tracer position",{"Top", "Bottom", "Center", "Left", "Right", "From gun barrel"}, function(String)
+        if String then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local ESPVisibleCheck = ESP:CreateToggle("Visible check", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local ESPHealthbars = ESP:CreateToggle("Healthbars", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local HealthBarSize = ESP:CreateSlider("Health bar size", 0, 100, 100, true, function(Value)
+        if Value then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local ChamsToggle = Chams:CreateToggle("Chams", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local ChamsColor = Chams:CreateColorpicker("Chams color", nil, function(color)
+        if color then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local ChamsBehindWall = Chams:CreateToggle("Visible check", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local ChamsEffect = Chams:CreateDropdown("Chams effect", {"Ghost", "Skybox", "Abstract Fluid", "Topography", "Smoke", "Forcefield",}, function(String)
+        if String then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local ChamsTransparency = Chams:CreateSlider("Chams transparency (%)", 0,100,100, true, function(Value)
+        if Value then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+    local BROKENANTIVK = Broken:CreateButton("Anti VK", function()
+            spawn(function()
+        local AR = game:GetService("ReplicatedStorage").Misc.MsgerMain
+        local a = AR:Clone()
+        a.Parent = game:GetService("ReplicatedStorage").Misc -- cloning and changing parents
+        a.Parent = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat
+        a.Text = " $ Calyx V2 $" -- the prefix lol
+        a.Msg.Text = "  Anti votekick enabled :)" -- the msg
+        a.Tag.Staff.Visible = true
+        a.Msg.TextStrokeTransparency = 1
+        a.Tag.Staff.Image = "http://www.roblox.com/asset/?id=7197419712"
+
+        local count = 0   -- checks how many msgs are in chat
+        for i,v in pairs (game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat:GetChildren()) do
+            count = count + 1
+        end
+
+        if count > 7 then
+        a.Parent = game:GetService("ReplicatedStorage").Misc -- deletes when at top
+        end
+        local Brick = a
+        while true do -- rainbow
+          for i = 0,1,0.001*4 do
+              Brick.TextColor3 = Color3.fromHSV(i,1,1)  
+              wait()
+          end
+        end
+end)
+end)
+
+    local RainbowWorld = World:CreateToggle("Rainbow ambient", nil, function(State)
+        if State then
+            spawn(function()
+        
+            end)
+        end
+    end)
+
+    local armChams = Aesthetics:CreateToggle("Arm chams", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    local armChamsColor = Aesthetics:CreateColorpicker("Arms color", nil, function(Color)
+        if Color then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local armChamsMaterial = Aesthetics:CreateDropdown("Arms material", {"Default", "Ghost", "Fog", "Smooth plastic", "Neon", "Forcefield", "Transparent"}, function(String)
+        if String then
+            spawn(function()
+
+            end)
+        end
+    end) 
+
+    local gunChams = Aesthetics:CreateToggle("Gun chams", nil, function(State)
+        if State then
+            spawn(function()
+
+            end)
+        end
+    end)
+
+    local gunarmChamsColor = Aesthetics:CreateColorpicker("Gun color", nil, function(Color)
+        if Color then
+            spawn(function()
+                
+            end)
+        end
+    end)
+
+    local gunChamsMaterial = Aesthetics:CreateDropdown("Gun material", {"Default", "Ghost", "Fog", "Smooth plastic", "Neon", "Forcefield", "Transparent"}, function(String)
+        if String then
+            spawn(function()
+
+            end)
+        end
+    end) 
+
+    local VisualAesthetics = Aesthetics:CreateSlider("Blend with original %", 0, 100, 0 , true, function(Value)
+        if Value then
+            spawn(function()
+            
+            end)
+        end
+    end)
+
+        -- settings
+
+    local UIToggle = UI:CreateToggle("UI Toggle", nil, function(State)
+	    Window:Toggle(State)
+    end)
+    UIToggle:AddToolTip("Toggles the UI")
+
+    UIToggle:CreateKeybind(tostring(Config.Keybind):gsub("Enum.KeyCode.", ""), function(Key)
+	    Config.Keybind = Enum.KeyCode[Key]
+    end)
+    UIToggle:SetState(true)
+
+    local UIColour = UI:CreateColorpicker("UI Color", function(Color)
+	    Window:ChangeColor(Color)
+    end)
+
+    UIColour:AddToolTip("Colour of the UI")
+    
+    UIColour:UpdateColor(Config.Color)
+
+    local BackgroundImage = UI:CreateDropdown("Image", {"Topography","Hearts","Abstract","Hexagon","Circles","Lace With Flowers","Floral"}, function(Name)
+	if Name == "Default" then
+		Window:SetBackground("2151741365")
+	elseif Name == "Hearts" then
+		Window:SetBackground("6073763717")
+	elseif Name == "Abstract" then
+		Window:SetBackground("6073743871")
+	elseif Name == "Hexagon" then
+		Window:SetBackground("6073628839")
+	elseif Name == "Circles" then
+		Window:SetBackground("6071579801")
+	elseif Name == "Lace With Flowers" then
+		Window:SetBackground("6071575925")
+	elseif Name == "Floral" then
+		Window:SetBackground("5553946656")
+	end
+end)
+BackgroundImage:SetOption("Topography")
+BackgroundImage:AddToolTip("Background image for the UI")
+
+local BackgroundColour = UI:CreateColorpicker("Color", function(Color)
+	Window:SetBackgroundColor(Color)
+end)
+BackgroundColour:UpdateColor(Color3.new(1,1,1))
+BackgroundColour:AddToolTip("The background colour for the UI")
+
+local UITransparency = UI:CreateSlider("Transparency", 0, 1, 0, false, function(Value)
+	Window:SetBackgroundTransparency(Value)
+end)
+UITransparency:AddToolTip("The transparency for the UI")
+
+local TileScale = UI:CreateSlider("Tile Scale", 0, 1, nil, false, function(Value)
+	Window:SetTileScale(Value)
+end)
+TileScale:SetValue(0.5)
+TileScale:AddToolTip("The scale for the background tile")
+
+end -- dont remove (if gamename == 292........ then load pf)
