@@ -1,4 +1,4 @@
--- 5th july
+-- 4th july
 local gamename = game.PlaceId
 if gamename == 292439477 then --pf
 
@@ -950,7 +950,7 @@ end)
         _G.Pro = true
         spawn(function()
             if _G.Pro then
-                loadstring(game:HttpGet('https://pastebin.com/raw/5qGqZHCf', true))()
+                loadstring(game:HttpGet('https://pastebin.com/raw/BApwJN7p', true))()
             end
         end)
     elseif not State then
