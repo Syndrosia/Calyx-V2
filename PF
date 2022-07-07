@@ -118,7 +118,6 @@ function initialize()
         local AR = game:GetService("ReplicatedStorage").Misc.Msger
         local b = AR:Clone()
         local a = AR:Clone()
-        local c = AR:Clone()
         a.Parent = game:GetService("ReplicatedStorage").Misc
         b.Parent = game:GetService("ReplicatedStorage").Misc
 
@@ -155,11 +154,9 @@ function initialize()
 
         local Brick = a
         local brick = b
-        local Bricks = c
         local VedDev = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version
         while true do
           for i = 0,1,0.001*4 do
-              Bricks.TextColor3 = Color3.fromHSV(i,1,1)
               Brick.TextColor3 = Color3.fromHSV(i,1,1)
               brick.TextColor3 = Color3.fromHSV(i,1,1)
               VedDev.TextColor3 = Color3.fromHSV(i,1,1)
@@ -182,8 +179,10 @@ local AimbotToggle = Legit:CreateToggle("Aim assist", nil, function(State)
         end)
     end
 end)
+
 AimbotToggle:CreateKeybind("O", function(Key)
 end)
+
 
 local VisibleCheck = Legit:CreateToggle("Visible check", nil, function(State)
         if State then
