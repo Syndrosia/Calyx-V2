@@ -1,9 +1,10 @@
--- 7th july
+-- 8th july
 local gamename = game.PlaceId
-if gamename == 292439477 then --pf
+if gamename == 292439477 then
 
 LclplrName = game:GetService("Players").LocalPlayer.Name
 Calyxversion = "Calyx V2"
+
 for i,v in pairs(getgc(true)) do
     if type(v) == "table" then
         if rawget(v, "send") then
@@ -138,11 +139,11 @@ function initialize()
         a.Msg.TextStrokeTransparency = 1
         a.Tag.Staff.Image = "http://www.roblox.com/asset/?id=7197419712"
         
+        local count = 0
+
         for i,v in pairs (game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat:GetChildren()) do
             count = count + 1
         end
-
-        local count = 0 
 
         if count > 7 then
             a.Text = ""
@@ -151,15 +152,11 @@ function initialize()
             a.Parent = game:GetService("ReplicatedStorage").Misc
         end
 
-        local Brick = a
-        local brick = b
-        local VedDev = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version
-
         while wait() do
             for i = 0,1,0.001*4 do
-                Brick.TextColor3 = Color3.fromHSV(i,1,1)
-                brick.TextColor3 = Color3.fromHSV(i,1,1)
-                VedDev.TextColor3 = Color3.fromHSV(i,1,1)       
+                a.TextColor3 = Color3.fromHSV(i,1,1)
+                b.TextColor3 = Color3.fromHSV(i,1,1)
+                game:GetService("Players")[LclplrName].PlayerGui.ChatGame.Version.TextColor3 = Color3.fromHSV(i,1,1)       
             end
         end
     end)
@@ -311,7 +308,7 @@ panic:AddToolTip("Turns off everything you have enabled and destroys the gui and
 -- triggerbot section
 
 local TrigToggle = Trig:CreateToggle("Enabled", nil, function(State)
-if State then
+    if State then
         spawn(function()
             
         end)
@@ -321,7 +318,7 @@ end)
 TrigToggle:AddToolTip("Toggles triggerbot")
 
 local InstantTrig = Trig:CreateToggle("Visible check", nil, function(State)
-if State then
+    if State then
         spawn(function()
             
         end)
@@ -451,7 +448,7 @@ end)
 
 CombineMags:AddToolTip("Combines the mags")
 
--- charcter tab
+-- character tab
 
 local AntiAimToggle = AntiAim:CreateToggle("Enable", nil, function(State)
     if State then
@@ -544,7 +541,7 @@ end)
 
 skycam:AddToolTip("When you kill someone, instead of them spectating you they will just be starring at the sky.")
 
--- charcter section
+-- character section
 
 local Fly = Character:CreateToggle("Fly", nil, function(State)
     if State then
@@ -646,7 +643,7 @@ end)
 
 NoFallDmg:AddToolTip("No fall damage")
 
--- rage section (calyx premium)
+-- rage section
 
 local spawnkill = RageGun:CreateToggle("Insta kill enemy", nil, function(State)
     if State then
@@ -676,7 +673,7 @@ end)
 
 Ragebot:AddToolTip("OP ragebot (credits to iRay)")
 
-local knifeaura = RageGun:CreateToggle("Knife aura", nil, function(State)
+local KnifeAura = RageGun:CreateToggle("Knife aura", nil, function(State)
     if State then
         spawn(function()
             
@@ -702,7 +699,7 @@ local KnifeAuraMustHave = RageGun:CreateToggle("Require knife equipped", nil, fu
     end
 end)
 
-knifeaura:AddToolTip("Kills everyone in selected stud radius with your knife")
+KnifeAura:AddToolTip("Kills everyone in selected stud radius with your knife")
 
 -- grenades
 
@@ -738,7 +735,7 @@ local unlockAllAttachments = Broken:CreateButton("Unlock all attachments", funct
     end
 end)
 
-GrenadeEnabled:AddToolTip("Teleports grenades to lowest rank enemy (so they don't think anything of it lol")
+GrenadeEnabled:AddToolTip("Teleports grenades to lowest rank enemy so they don't think anything of it lol")
 
 local GrenadeBudget = Grenade:CreateSlider("Grenade tick time (s)", 0, 5, 5, true, function(Value)
     if Value ~= 5 then
@@ -786,12 +783,15 @@ local AutoVK = Misc:CreateToggle("Call random votekick (Rank 25+)", nil, functio
     if State then
         spawn(function()
             local players = game:GetService("Players"):GetPlayers()
+
             if #players > 0 then
                 RandomPlayer = players[math.random(1, #players)]
             end
+
             if RandomPlayer.Name ~= LclplrName then
                 AllowedRandom = true
             end
+
             if not Menu:isdeployed() then
                 if AllowedRandom then
                     Network:send("spawn")
@@ -807,7 +807,6 @@ local AutoVK = Misc:CreateToggle("Call random votekick (Rank 25+)", nil, functio
                     end
                 end
             end
-
             if Menu:isdeployed() then
                 game:GetService("ControllerService").RemoteEvent:FireServer("modcmd", "/votekick:"..RandomPlayer.Name..":Exploiting")
             end
@@ -857,20 +856,20 @@ local AutoVote = Misc:CreateToggle("Auto vote", true, function(State)
             vk:GetPropertyChangedSignal("Visible"):Connect(function()
                 if vk.Title.Text == "Votekick "..name.." out of the server?" then
                     keypress(0x4E)   
-                        wait(0.03)
+                    wait(0.03)
                     keyrelease(0x4E)
                 else
                     if getgenv().vkoptionselected == "Yes" then
                         keypress(0x59)
-                            wait(0.01)
+                        wait(0.01)
                         keyrelease(0x59)
                     elseif getgenv().vkoptionselected == "Dismiss" then
                         keypress(0x4A)
-                            wait(0.01)
+                        wait(0.01)
                         keyrelease(0x4A)
                     elseif getgenv().vkoptionselected == "No" then
                         keypress(0x4E)   
-                            wait(0.03)
+                        wait(0.03)
                         keyrelease(0x4E)
                     end
                 end
@@ -879,7 +878,7 @@ local AutoVote = Misc:CreateToggle("Auto vote", true, function(State)
     end
 end)
 
-    AutoVote:AddToolTip("Automatically votes when votekick is avalible (Votes no for you)")
+AutoVote:AddToolTip("Automatically votes when votekick is avalible (Votes no for you)")
 
 local autovkoption = Misc:CreateDropdown("Votekick option", {"No", "Dismiss", "Yes"}, function(String)
     getgenv().vkoptionselected = String
@@ -926,10 +925,12 @@ local WorldColourPicker = World:CreateColorpicker("World Colour", nil, function(
     end
 end)
 
-local deletemap = World:CreateButton("Delete map", function()
+local deletemap = World:CreateButton("Delete map", function(State)
+    if State then
         spawn(function()
             
         end)
+    end
 end)
 
 local ThirdPerson = World:CreateToggle("Third person", nil, function(State)
@@ -1058,27 +1059,27 @@ local BROKENANTIVK = Broken:CreateButton("Anti VK", function()
     spawn(function()
         local AR = game:GetService("ReplicatedStorage").Misc.MsgerMain
         local a = AR:Clone()
-        a.Parent = game:GetService("ReplicatedStorage").Misc -- cloning and changing parents
+        a.Parent = game:GetService("ReplicatedStorage").Misc
         a.Parent = game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat
         a.Text = " $ Calyx V2 $" -- the prefix lol
-        a.Msg.Text = "  Anti votekick enabled :)" -- the msg
+        a.Msg.Text = "  Anti votekick enabled :)"
         a.Tag.Staff.Visible = true
         a.Msg.TextStrokeTransparency = 1
         a.Tag.Staff.Image = "http://www.roblox.com/asset/?id=7197419712"
 
-        local count = 0   -- checks how many msgs are in chat
+        local count = 0  
+
         for i,v in pairs (game:GetService("Players")[LclplrName].PlayerGui.ChatGame.GlobalChat:GetChildren()) do
             count = count + 1
         end
 
         if count > 7 then
-        a.Parent = game:GetService("ReplicatedStorage").Misc -- deletes when at top
+            a.Parent = game:GetService("ReplicatedStorage").Misc 
         end
-        local Brick = a
-        while true do -- rainbow
-            for i = 0,1,0.001*4 do
-                Brick.TextColor3 = Color3.fromHSV(i,1,1)  
-                wait()
+
+        while wait() do 
+            for i = 0,1,0.004 do
+                a.TextColor3 = Color3.fromHSV(i,1,1)      
             end
         end
     end)
@@ -1167,27 +1168,24 @@ local UIColour = UI:CreateColorpicker("UI Color", function(Color)
 end)
 
 UIColour:AddToolTip("Colour of the UI")
-
 UIColour:UpdateColor(Config.Color)
 
 local BackgroundImage = UI:CreateDropdown("Image", {"Topography","Hearts","Abstract","Hexagon","Circles","Lace With Flowers","Floral"}, function(Name)
-
-if Name == "Default" then
-    Window:SetBackground("2151741365")
-elseif Name == "Hearts" then
-    Window:SetBackground("6073763717")
-elseif Name == "Abstract" then
-    Window:SetBackground("6073743871")
-elseif Name == "Hexagon" then
-    Window:SetBackground("6073628839")
-elseif Name == "Circles" then
-    Window:SetBackground("6071579801")
-elseif Name == "Lace With Flowers" then
-    Window:SetBackground("6071575925")
-elseif Name == "Floral" then
-    Window:SetBackground("5553946656")
-end
-
+    if Name == "Default" then
+        Window:SetBackground("2151741365")
+    elseif Name == "Hearts" then
+        Window:SetBackground("6073763717")
+    elseif Name == "Abstract" then
+        Window:SetBackground("6073743871")
+    elseif Name == "Hexagon" then
+        Window:SetBackground("6073628839")
+    elseif Name == "Circles" then
+        Window:SetBackground("6071579801")
+    elseif Name == "Lace With Flowers" then
+        Window:SetBackground("6071575925")
+    elseif Name == "Floral" then
+        Window:SetBackground("5553946656")
+    end
 end)
 
 BackgroundImage:SetOption("Topography")
